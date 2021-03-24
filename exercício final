@@ -1,0 +1,57 @@
+float tamRE = 0.0; //variável rect esquerda
+color cRD;
+
+float tamRM = 0.0;   //variável rect centro
+color rRM;
+color gRM;
+color bRM; 
+
+float tamRD = 600;  //variavel rect direito
+color fRD;
+
+
+void setup() {
+
+  noCursor(); 
+  fullScreen();
+  //size(800, 800);    //canvas
+  //background(255);
+}
+
+void draw() {
+
+  noStroke();
+  fill(255);               //tela falsa
+  rectMode(CORNER);
+  rect(0, 0, 2000, 2000); 
+
+  cRD = color (#AD7609, 220);
+  rectMode(CENTER);
+  fill(cRD);            //desenho rect esquerdo
+  rect(300, 400, tamRE, 350); 
+  tamRE = tamRE + 1; 
+  if (tamRE>500) {
+    tamRE = -tamRE;
+  }
+
+  rRM=+7;
+  gRM=+5;     //variaveis de cor rect meio
+  bRM=+57;
+  rectMode(CENTER); 
+  fill(rRM%255, gRM%255, random(bRM%255), 220);
+  rect (650, 400, 600, tamRM%720);          //desenho rect meio
+  tamRM = tamRM + 0.5;
+  if (tamRM>720) {
+    tamRM=0.0;
+  }
+
+  fRD = color (#F77511, 220);  //desenho rect direita
+  fill (fRD);
+  noStroke();
+  rectMode(CENTER);
+  rect(1000, 400, tamRD, tamRD);
+  tamRD = tamRD - 2.550; 
+  if (tamRD<0) {
+    tamRD = 600;
+  }
+}
