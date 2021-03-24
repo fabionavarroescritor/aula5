@@ -1,0 +1,25 @@
+float stroke = 0.0;
+float largura = 0.0;  //VARIÁVEIS DE LAGURA E COR DA LINHA
+color c;
+
+void setup() {
+  noCursor();
+  fullScreen(); //CANVAS
+  background(255);
+}
+void draw() {
+  largura = random(mouseX%80, mouseY%20); 
+  c=color(random(255), random(255), 0, 170); //VALORES DAS VARIÁVEIS
+  stroke=random(-1.5, +4.5);
+
+  strokeCap(PROJECT);
+  strokeWeight(largura);   //NOME DAS VARIáveis
+  stroke(c);
+  line (mouseX+stroke, mouseY+stroke, pmouseX, pmouseY); //LINHA
+}
+
+void mousePressed() {
+  if (true) {
+    background(255);   //EVENTO DE MOUSE
+  }
+}
